@@ -26,9 +26,6 @@ longpoll.create('/poll/:id', (req,res,next) => {
 });
 
 router.get('/me', function(req,res,next){
-  //https.get('https://accounts.spotify.com/authorize?client_id=86dab2ec88ef49cb98f1f308a7eecb7a&response_type=token&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2Flistk&scope=user-read-private', (res)=>{
-    //console.log(res.status);
-  //})
   state = req.query.state;
   var authorizeurl = spotifyApi.createAuthorizeURL(scopes, state);
   res.setHeader('Access-Control-Allow-Origin', 'http://localhost:8100')
